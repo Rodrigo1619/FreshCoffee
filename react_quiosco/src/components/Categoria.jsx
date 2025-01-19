@@ -16,6 +16,7 @@ export default function Categoria({categoria}) { /* categoria es desestructurado
             <button 
                 className="text-lg font-bold cursor-pointer truncate"
                 type="button"
+                /* obteniendo el id de las categorias */
                 onClick={()=> handleClickCategorias(id)} /* con el arrfunc espera a que se haga el click y no se ejecuta la funcion solo por mandarla a llamar */
             >
                 {nombre}
