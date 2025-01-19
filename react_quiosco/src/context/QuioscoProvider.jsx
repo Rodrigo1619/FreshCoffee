@@ -7,6 +7,7 @@ const QuioscoContext = createContext();
 const QuioscoProvider = ({children})  =>{
     /* usando useState para cambia el valor de las categorias */
     const [categorias, setCategorias] = useState(categoriasDB);
+    /* la categoria actual tiene un valor inicial de la primera categoria */
     const [categoriaActual, setCategoriaActual] = useState(categorias[0]);
 
     /* funcion para poder filtrar las categorias */
