@@ -9,6 +9,9 @@ const QuioscoProvider = ({children})  =>{
     const [categorias, setCategorias] = useState(categoriasDB);
     /* la categoria actual tiene un valor inicial de la primera categoria */
     const [categoriaActual, setCategoriaActual] = useState(categorias[0]);
+    /* modal que al inicio estara "apagado" */
+    const [modal, setModal] = useState(false);
+    const [producto, setProducto] = useState({});
 
     /* funcion para poder filtrar las categorias */
     const handleClickCategorias = (id)=>{
@@ -17,14 +20,26 @@ const QuioscoProvider = ({children})  =>{
         /* cambiando que la categoria actual se muestre */
         setCategoriaActual(categoria);
     }
+
+    const handleClickModal = () => {
+        setModal(!modal);
+    }
     
+    const handleSetProducto = (producto) =>{
+        setProducto(producto);
+    }
+
     return (
         <QuioscoContext.Provider
             value={{
                 /* aqui se ponen los datos que se comparten entre componentes */
                 categorias,
                 categoriaActual,
-                handleClickCategorias
+                handleClickCategorias,
+                modal,
+                handleClickModal,
+                producto,
+                handleSetProducto
 
             }}
         >{children}</QuioscoContext.Provider>
