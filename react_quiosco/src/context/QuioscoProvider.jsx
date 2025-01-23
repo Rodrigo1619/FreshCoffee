@@ -12,6 +12,7 @@ const QuioscoProvider = ({children})  =>{
     /* modal que al inicio estara "apagado" */
     const [modal, setModal] = useState(false);
     const [producto, setProducto] = useState({});
+    const [pedido, setPedido] = useState([]);
 
     /* funcion para poder filtrar las categorias */
     const handleClickCategorias = (id)=>{
@@ -39,7 +40,8 @@ const QuioscoProvider = ({children})  =>{
                 modal,
                 handleClickModal,
                 producto,
-                handleSetProducto
+                handleSetProducto,
+                pedido
 
             }}
         >{children}</QuioscoContext.Provider>
