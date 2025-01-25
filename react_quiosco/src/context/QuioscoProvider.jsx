@@ -30,6 +30,13 @@ const QuioscoProvider = ({children})  =>{
         setProducto(producto);
     }
 
+    /* funcion para poder hacer el crud con pedidos */
+    /* si pongo antes de ...producto se elimina */
+    const handleAgregarPedido = ({categoria_id, imagen, ...producto}) =>{
+        /* toma una copia de lo que hay en pedido y agregale este producto nuevo */
+        setPedido([...pedido, producto]);
+    }
+
     return (
         <QuioscoContext.Provider
             value={{
@@ -41,7 +48,8 @@ const QuioscoProvider = ({children})  =>{
                 handleClickModal,
                 producto,
                 handleSetProducto,
-                pedido
+                pedido,
+                handleAgregarPedido
 
             }}
         >{children}</QuioscoContext.Provider>
